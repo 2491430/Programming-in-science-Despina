@@ -21,7 +21,7 @@ def plot_hr_diagram(temperature, luminosity):
     (decreasing) and luminosity on the y-axis.
     """
     plt.scatter(temperature, luminosity, c=temperature, cmap='viridis', edgecolors='k')   #cmap is color of the band on the right
-    plt.gca().invert_xaxis()  # Temperature decreases from left to right
+    plt.gca().invert_xaxis()        # Temperature decreases from left to right
     plt.xlabel("Temperature (K)")
     plt.ylabel("Luminosity (Lâ˜‰)")
     plt.title("Hertzsprung-Russell Diagram")
@@ -42,7 +42,7 @@ def plot_density(data, color_map='gray'):
 
 # Example usage:
 # Example for plot_curve
-x = np.linspace(0, 10, 10) # Starts at 0 until 10 and gives 100 points
+x = np.linspace(0, 10, 100)       # Starts at 0 until 10 and gives 100 points
 y = np.sin(x)
 plot_curve(x, y)
     
@@ -52,6 +52,6 @@ lum = np.array([0.1, 1, 10, 100, 1000])
 plot_hr_diagram(temp, lum)
 
 # Example for plot_density
-np.random.seed(0)
-data = np.random.randn(1000, 2)  # Generating random 2D data
+np.random.seed(0)                # Same 1000 numbers at every call
+data = np.random.randn(1000, 2)  # Generating random 2D data and 1000 random numbers
 plot_density(data, 'hot')
