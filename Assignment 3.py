@@ -4,14 +4,43 @@ import numpy as np
 
 # Function 1: File I/O - Writing and Reading from a Text File
 # Writes a list of numbers to a file and then reads them back as a list of integers.
-def write_and_read_txt(filename, numbers):
-    return []
+def write_and_read_txt(numbers, filename = "numbers.txt"):
+
+# Opens file in write mode and writes the numbers
+
+    myfile = open(filename, 'w')
+    myfile.write(str(numbers))
+    myfile.close()
+
+# Opens the file and reads the contents
+
+    myfile = open(filename,'r')
+    print(myfile.read())
+    myfile.close()
+
+numbers = [1,2,3,4,5] 
+write_and_read_txt(numbers)
+
  
 
 # Function 2: File I/O - Writing and Reading from a CSV File
 # Writes a list of lists to a CSV file and reads it back.
-def write_and_read_csv(filename, data):
-    return []
+def write_and_read_csv(data, filename = "data.csv"):
+
+# Opens file in write mode and writes list of lists
+
+    myfile = open(filename, 'w')
+    myfile.write(str(data))
+    myfile.close()
+
+# Opens the file and reads the contents
+
+    myfile = open(filename,'r')
+    print(myfile.read())
+    myfile.close()
+
+data = [[1,2,3] , [4,5,6] , [7,8,9]]
+write_and_read_csv(data)
 
 # Function 3: Reading an Array from a File
 # Reads a space-separated array from a text file and converts it to a NumPy array.
