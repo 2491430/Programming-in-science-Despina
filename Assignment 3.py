@@ -48,15 +48,14 @@ def read_array_from_file(filename = "array.txt"):
     
     return arr
 
-array = read_array_from_file(r"C:\Users\p.destounis\OneDrive - LECTRA\Documents\array.txt")
+array = read_array_from_file(r"C:\Users\2491430\Documents\array.txt")
 print(array)
 
-    
 
 # Function 4: Plotting Data with plot() and show()
 # This function plots a given list of numbers as a line graph.
-def plot_data(numbers):
-    plt.plot(numbers, marker='o', linestyle='-')
+def plot_data(x_values, y_values):
+    plt.plot(x_values, y_values, marker='o', linestyle='-')
     plt.xlabel("X Axis")
     plt.ylabel("Y Axis")
     plt.title("Line Plot")
@@ -64,8 +63,10 @@ def plot_data(numbers):
     plt.show()
     return
 
-numbers = [1,2,3,4,5,6,7,8,9,10]
-plot_data(numbers)
+x_values = [0,1,2,3,4,5]
+y_values = [0,1,2,3,4,5]
+
+plot_data(x_values, y_values)
 
 # Function 5: Density Plot
 # This function takes a list of numbers and plots a density plot.
