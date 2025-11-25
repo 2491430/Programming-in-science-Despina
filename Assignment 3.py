@@ -44,13 +44,30 @@ write_and_read_csv(data)
 
 # Function 3: Reading an Array from a File
 # Reads a space-separated array from a text file and converts it to a NumPy array.
-def read_array_from_file(filename):
-    return np.array([])
+def read_array_from_file(filename = "array.txt"):
+     
+    myfile = open(filename,'r')
+    file_contents = (myfile.read())
+    myfile.close
+    
+    # Removes white space and splits the contents into individual pieces that numpy can convert into an array
+    values = file_contents.strip().split()
+
+    # Converts to NumPy array
+    arr = np.array(values, dtype=int)
+    
+    return arr
+
+
+array = read_array_from_file(r"C:\Users\p.destounis\OneDrive - LECTRA\Documents\array.txt")
+print(array)
+
+    
 
 # Function 4: Plotting Data with plot() and show()
 # This function plots a given list of numbers as a line graph.
 def plot_data(numbers):
-    plt.plot(numbers, marker='o', linestyle='-')
+    plt.plot(numbers, marker='p', linestyle='-')
     plt.xlabel("X Axis")
     plt.ylabel("Y Axis")
     plt.title("Line Plot")
@@ -64,7 +81,7 @@ plot_data(numbers)
 # Function 5: Density Plot
 # This function takes a list of numbers and plots a density plot.
 def density_plot(data):
-    plt.hist2d(data[:, 0], data[:, 1], bins=50, density=True)
+    plt.hist2d(data[:, 0], data[:, 1], bins=50, density=True) # Gets x and y values, makes a 50 x 50 grid
     plt.colorbar(label="Density")
     plt.xlabel("X Axis")
     plt.ylabel("Y Axis")
@@ -72,5 +89,5 @@ def density_plot(data):
     plt.show()
     return
           
-data = np.random.randn(5000,2)
+data = np.random.randn(5000,2) # Generating random 2D data and 5000 random numbers
 density_plot(data)
