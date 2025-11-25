@@ -6,15 +6,11 @@ import numpy as np
 # Writes a list of numbers to a file and then reads them back as a list of integers.
 def write_and_read_txt(numbers, filename = "numbers.txt"):
 
-# Opens file in write mode and writes the numbers
-
-    myfile = open(filename, 'w')
+    myfile = open(filename, 'w') # Opens file in write mode and writes the numbers
     myfile.write(str(numbers))
     myfile.close()
 
-# Opens the file and reads the contents
-
-    myfile = open(filename,'r')
+    myfile = open(filename,'r') # Opens the file and reads the contents
     print(myfile.read())
     myfile.close()
 
@@ -27,15 +23,11 @@ write_and_read_txt(numbers)
 # Writes a list of lists to a CSV file and reads it back.
 def write_and_read_csv(data, filename = "data.csv"):
 
-# Opens file in write mode and writes list of lists
-
-    myfile = open(filename, 'w')
+    myfile = open(filename, 'w') # Opens file in write mode and writes list of lists
     myfile.write(str(data))
     myfile.close()
 
-# Opens the file and reads the contents
-
-    myfile = open(filename,'r')
+    myfile = open(filename,'r') # Opens the file and reads the contents
     print(myfile.read())
     myfile.close()
 
@@ -50,14 +42,11 @@ def read_array_from_file(filename = "array.txt"):
     file_contents = (myfile.read())
     myfile.close
     
-    # Removes white space and splits the contents into individual pieces that numpy can convert into an array
-    values = file_contents.strip().split()
+    values = file_contents.strip().split() # Removes white space and splits the contents into individual pieces that numpy can convert into an array
 
-    # Converts to NumPy array
-    arr = np.array(values, dtype=int)
+    arr = np.array(values, dtype=int) # Converts to NumPy array
     
     return arr
-
 
 array = read_array_from_file(r"C:\Users\p.destounis\OneDrive - LECTRA\Documents\array.txt")
 print(array)
@@ -67,7 +56,7 @@ print(array)
 # Function 4: Plotting Data with plot() and show()
 # This function plots a given list of numbers as a line graph.
 def plot_data(numbers):
-    plt.plot(numbers, marker='p', linestyle='-')
+    plt.plot(numbers, marker='o', linestyle='-')
     plt.xlabel("X Axis")
     plt.ylabel("Y Axis")
     plt.title("Line Plot")
